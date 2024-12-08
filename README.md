@@ -132,18 +132,5 @@ The implemented SRAM PUF on the STM32 Nucleo F103RB successfully demonstrates th
 
 ---
 
-## Future Work
-- **Error Correction:** Implement BCH or Reed-Solomon codes to improve reproducibility.
-- **Hashing:** Apply cryptographic hashing (e.g., SHA-256) for robust key generation.
-- **Environmental Testing:** Extend testing to include extreme temperature and voltage variations.
 
----
-
-## Repository Structure
-```
-.
-|-- main.c             # Source code for reading and transmitting SRAM data
-|-- STM32F103RBTX_FLASH.ld # Linker script with `.noinit` configuration
-|-- README.md          # Project documentation
-```
 
