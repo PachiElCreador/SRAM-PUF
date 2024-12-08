@@ -95,7 +95,8 @@ void Error_Handler(void)
 ---
 
 ## Results
-![image](https://github.com/user-attachments/assets/45c103aa-5c38-4a21-b02e-a0381f09bb30)
+<img src="https://github.com/user-attachments/assets/45c103aa-5c38-4a21-b02e-a0381f09bb30" alt="image" width="300" />
+
 
 ### Data Captured
 1. **First result:** `48 D2 1E 68 F4 B1 04 F0 0F 01 2F 04 D0 F4 D3`
