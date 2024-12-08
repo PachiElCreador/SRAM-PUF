@@ -106,10 +106,6 @@ void Error_Handler(void)
 - **Within a single reset (without disconnection):** The generated patterns remained constant, indicating consistent behavior of the PUF under identical conditions.
 - **Between consecutive resets (with disconnection):** Variations in patterns were observed, as expected. These changes were measured using the Bit Error Rate (BER):
 
-	Bit Differences	Total Bits	BER
-Chain 1 vs Chain 2	122	240	0.508333333
-Chain 2 vs Chain 3	16	240	0.066666667
-Chain 3 vs Chain 4	26	240	0.108333333
 ![image](https://github.com/user-attachments/assets/f16a1a19-f6e8-4689-a6fc-0af4b726ffe2)
 
 
