@@ -94,7 +94,7 @@ void Error_Handler(void)
 
 ---
 
-## Results
+## First results
 <img src="https://github.com/user-attachments/assets/45c103aa-5c38-4a21-b02e-a0381f09bb30" alt="image" width="300" />
 
 
@@ -114,10 +114,19 @@ void Error_Handler(void)
 ### Analysis
 - **First vs Second Reset:** High BER due to the randomness of SRAM's initial state after power-down.
 - **Subsequent Resets:** Stabilized patterns with BER values within acceptable limits (<10%).
-
 ---
 
-## Explanation of PUF Metrics
+## Final Validation
+A 20 power on reset and 20 soft reset was done on the board, "PUF reader.py" was used to acquire this data. This was repeated on 3 different boards. 
+
+### Results and Validation
+I was able to obtain the data from "data_sram_puf.csv", being every 2 columns different puf values, the first column after power on reset and the second for soft resets. This was repeated for 2 different boards, for the columns 3 and 4 for borad 2, and the columns 5 and 6 for board 3.
+
+After using "validation metrics calculation.py" we are able to calculate the following metrics.
+![image](https://github.com/user-attachments/assets/5a511993-9dea-4ef9-b718-d87cff847a74)
+
+
+## PUF Metrics (Evaluation criteria) explanation
 
 ### 1. **Uniformity**
 **Comparison:** Within the same board.
@@ -224,15 +233,19 @@ This indicates excellent robustness.
 | **Robustness (Intra HD)** | Within the same board      | Stability of patterns under identical conditions | 0%              |
 
 
-## Validation
+## Results Validation Interpretation
 
-1. **Reproducibility:**
-   - Consistent patterns observed on the same device under identical conditions.
-   - Acceptable BER observed between power cycles.
-2. **Uniqueness:**
-   - Pending further testing with multiple boards.
-3. **Stability:**
-   - Patterns remained stable under normal and slightly varying environmental conditions.
+1. **Uniformity:**
+   - The uniformity result is **49.13%**, which is very close to the ideal value of 50%. This indicates that the distribution of '1's and '0's in the PUF responses is well-balanced, a desirable property for randomness in PUFs.
+
+2. **Unicity:**
+   - The inter-device Hamming distance (Unicity) has a mean value of **48.84%**, which is very close to the expected theoretical value of 50%. This means that the PUF responses from different boards are distinct enough to ensure device-specific uniqueness, confirming the effectiveness of the PUF in distinguishing between devices.
+
+3. **Diffusion:**
+   - The diffusion mean is **9.90%**, which is lower than the expected value of ~50%. This suggests that the PUF responses do not exhibit a strong avalanche effect between power-on and soft reset states. This might indicate room for improvement in the design to ensure higher sensitivity to input changes.
+
+4. **Robustness:**
+   - The intra-device Hamming distance (Robustness) has a mean value of **0.00%**, which is ideal. This demonstrates that the PUF responses are highly stable and consistent within the same device across multiple resets. Stability is crucial for reproducibility in PUF applications.
 
 ---
 
