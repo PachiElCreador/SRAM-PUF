@@ -117,12 +117,19 @@ void Error_Handler(void)
 ---
 
 ## Final Validation
-A 20 power on reset and 20 soft reset was done on the board, "PUF reader.py" was used to acquire this data. This was repeated on 3 different boards. 
+
+A total of 20 power-on resets and 20 soft resets were performed on the board. The data was collected using the **"Read PUF.py"** script. This process was repeated on three different boards.
 
 ### Results and Validation
-I was able to obtain the data from "data_sram_puf.csv", being every 2 columns different puf values, the first column after power on reset and the second for soft resets. This was repeated for 2 different boards, for the columns 3 and 4 for borad 2, and the columns 5 and 6 for board 3.
 
-After using "validation metrics calculation.py" we are able to calculate the following metrics.
+Data was obtained from the **"data_sram_puf.csv"** file generated, where every two columns correspond to different PUF values. The first column in each pair represents the data after the power-on reset, and the second column represents the data after the soft reset. This structure is repeated for each of the three boards:
+
+- Columns 1 and 2: data from the first board.
+- Columns 3 and 4: data from the second board.
+- Columns 5 and 6: data from the third board.
+
+After processing the data using the **"Validation metrics calculation.py"** script, the following metrics were calculated.
+
 ![image](https://github.com/user-attachments/assets/5a511993-9dea-4ef9-b718-d87cff847a74)
 
 
