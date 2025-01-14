@@ -223,7 +223,7 @@ This indicates excellent robustness.
 
 ---
 
-### **Summary Table of Comparisons and Ideal Values**
+### **Table of Comparisons and Ideal Values**
 
 | **Metric**          | **Comparison**             | **What it Measures**                           | **Ideal Value** |
 |----------------------|---------------------------|------------------------------------------------|-----------------|
